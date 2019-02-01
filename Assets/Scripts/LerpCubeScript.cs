@@ -33,4 +33,23 @@ public class LerpCubeScript : MonoBehaviour {
 
     //inseert code here:
 
+    public void PrintDebugString()
+    {
+        Debug.Log(this.ToString());
+
+    }
+
+    public override string ToString()
+    {
+
+        string s;
+
+        s = (_cube ? "Cube position = " + _cube.transform.position
+            : "Cube not instantiated ") + "\n"
+            + "Left Position = " + _leftPosition + "\n"
+            + "Right Position = " + _rightPosition;
+
+        return s;
+    }
+
 }
