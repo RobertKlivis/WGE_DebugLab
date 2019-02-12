@@ -18,12 +18,12 @@ public class LerpCubeScript : MonoBehaviour {
     {
         float t = 0;
 
-        while (t < 1)
+        while (t < 1.4)
         {
             t += Time.deltaTime;
             Debug.Log(t);
-            _cube.transform.position = Vector3.Lerp(_leftPosition, _rightPosition, t);
-            if(t >=1)
+            _cube.transform.position = _cube.transform.position - (_leftPosition - _rightPosition) * t * Time.deltaTime;
+            if(t >=1.4)
             {
                 _cube.transform.position = _rightPosition;
             }
